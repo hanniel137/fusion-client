@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 
 const Row1 = () => {
   return (
-      <Container className='p-5'>
+      <Container>
         <Row className='mt-3'>
             <Col className="col-12 h1 mt-5 text-light mb-5 text-center" data-bs-theme="dark">The Fusion Gaming Difference</Col>
             <Col className="col-12 mb-5 p-3 rounded bg-danger text-light text-center">

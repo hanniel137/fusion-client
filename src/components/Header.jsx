@@ -28,10 +28,10 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                     <Nav className="ms-auto">
-                        <Navbar.Brand className="h2 p-3" href="/config">Build Your Own PC</Navbar.Brand>
-                        <Navbar.Brand className="h2 p-3" href="#home">Pre-Builts</Navbar.Brand>
-                        <Navbar.Brand className="h2 p-3" href="#home">About Us</Navbar.Brand>
-                        <Navbar.Brand className="h2 p-3" href="#home">Support</Navbar.Brand>
+                        <Navbar.Brand className="h2 p-1" href="/config">Build Your Own PC</Navbar.Brand>
+                        <Navbar.Brand className="h2 p-1" href="#home">Pre-Builts</Navbar.Brand>
+                        <Navbar.Brand className="h2 p-1" href="#home">About Us</Navbar.Brand>
+                        <Navbar.Brand className="h2 p-1" href="#home">Support</Navbar.Brand>
 
                     </Nav>
                 </Navbar.Collapse>
