@@ -3,6 +3,8 @@ import axios from 'axios'
 
 
 const Configurator = () => {
+
+  const url = "https://fusion-backend.onrender.com"
     
     const [platform, setPlatform] = useState('')
     const [platforms, setPlatforms] = useState([])
@@ -419,7 +421,7 @@ const Configurator = () => {
 
     const fetchPlatform = async () =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/platform")
+         const res = await axios.get(url+"/platform")
          setPlatforms(res.data)
         }
         catch(err){
@@ -429,7 +431,7 @@ const Configurator = () => {
 
     const fetchGpuTypes = async () =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/gpuType")
+         const res = await axios.get(url+"/gpuType")
          setGpuTypes(res.data)
         }
         catch(err){
@@ -439,7 +441,7 @@ const Configurator = () => {
 
     const fetchGenerations = async (platform,gpuType) =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/series", {params: {platform,gpuType}})
+         const res = await axios.get(url+"/series", {params: {platform,gpuType}})
          setGenerations(res.data)
         }
         catch(err){
@@ -449,7 +451,7 @@ const Configurator = () => {
 
     const fetchProcessors = async (platform,gpuType,generation) =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/processor", {params: {platform,gpuType,generation}})
+         const res = await axios.get(url+"/processor", {params: {platform,gpuType,generation}})
          setProcessors(res.data)
         }
         catch(err){
@@ -459,7 +461,7 @@ const Configurator = () => {
     
     const fetchRamTypes = async (processor) =>{
         try{
-            const res = await axios.get("http://192.168.1.117:8800/ramType", {params: {processor}})
+            const res = await axios.get(url+"/ramType", {params: {processor}})
             setRamTypes(res.data)
         }
         catch(err){
@@ -478,7 +480,7 @@ const Configurator = () => {
 
     const fetchRamSizes = async (ramType,ramRGB) =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/ramSize", {params: {ramType,ramRGB}})
+         const res = await axios.get(url+"/ramSize", {params: {ramType,ramRGB}})
          setRamSizes(res.data)
         }
         catch(err){
@@ -488,7 +490,7 @@ const Configurator = () => {
 
     const fetchChipsets = async (ramSize) =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/chipset", {params: {processor,ramType,ramSize}})
+         const res = await axios.get(url+"/chipset", {params: {processor,ramType,ramSize}})
          setChipsets(res.data)
         }
         catch(err){
@@ -498,7 +500,7 @@ const Configurator = () => {
 
     const fetchGpuBrands = async (gpuType) =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/gpubrand", {params : {gpuType}})
+         const res = await axios.get(url+"/gpubrand", {params : {gpuType}})
          setGpuBrands(res.data)
         }
         catch(err){
@@ -508,7 +510,7 @@ const Configurator = () => {
 
     const fetchGpuModels = async (gpuBrand) =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/gpumodel", {params : {gpuBrand}})
+         const res = await axios.get(url+"/gpumodel", {params : {gpuBrand}})
          setGpuModels(res.data)
         }
         catch(err){
@@ -518,7 +520,7 @@ const Configurator = () => {
 
     const fetchCoolers = async (processor) =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/cooler", {params : {processor}})
+         const res = await axios.get(url+"/cooler", {params : {processor}})
          setCoolers(res.data)
         }
         catch(err){
@@ -528,7 +530,7 @@ const Configurator = () => {
 
     const fetchPrimaryStorage = async () =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/storage")
+         const res = await axios.get(url+"/storage")
          setPrimaryStorages(res.data)
         }
         catch(err){
@@ -538,7 +540,7 @@ const Configurator = () => {
 
     const fetchSecondaryStorage = async () =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/storage")
+         const res = await axios.get(url+"/storage")
          setSecondaryStorages(res.data)
         }
         catch(err){
@@ -548,7 +550,7 @@ const Configurator = () => {
 
     const fetchPsu = async () =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/psu")
+         const res = await axios.get(url+"/psu")
          setPsus(res.data)
         }
         catch(err){
@@ -558,7 +560,7 @@ const Configurator = () => {
 
     const fetchCabinetBrands = async () =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/cabinetbrand")
+         const res = await axios.get(url+"/cabinetbrand")
          setCabinetBrands(res.data)
         }
         catch(err){
@@ -568,7 +570,7 @@ const Configurator = () => {
 
     const fetchCabinetModels = async (cabinetBrand) =>{
         try{
-         const res = await axios.get("http://192.168.1.117:8800/cabinetmodel", {params: {cabinetBrand}})
+         const res = await axios.get(url+"/cabinetmodel", {params: {cabinetBrand}})
          setCabinetModels(res.data)
         }
         catch(err){
@@ -578,7 +580,7 @@ const Configurator = () => {
 
     const fetchPrice = async(pc) => {
       try{
-        const res = await axios.get("http://192.168.1.117:8800/price", {params: {pc}})
+        const res = await axios.get(url+"/price", {params: {pc}})
         setPcPrice(res.data)
         
       } catch (error) {
