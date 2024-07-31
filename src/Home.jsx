@@ -17,7 +17,7 @@ import Container from 'react-bootstrap/Container';
 
 const Home = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-black pb-5">
         <Container className="bg-black">
             <Header/>
             <Slider/>

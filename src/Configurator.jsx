@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Container from 'react-bootstrap/Container'
+
+
 
 const Configurator = () => {
 
@@ -608,232 +613,225 @@ const customCol = () => {
 )}
 
 return (
-    <div  className="bg-black">
-      <div className='container'>
-        <div className="row align-items-center p-5">
-          <div className='col-lg-6 col-md-5 col-sm-12'>
-            <img src="favicon.ico" className="rounded" width={100} height={100} alt="1"/>
-          </div>
-          <div className='col-lg-6 col-md-7 col-sm-12'>
-            <div className="h1 text-danger mt-4">Build Your Own PC</div>
-          </div>
-        </div>
-      </div>
-      <div className="container align-items-center">
-        <div className='row gy-5'>
-          <div className='col-lg-9 col-md-12 col-sm-12 order-lg-2'>
-            <div className="row px-5 mt-3 row-gap-3" data-bs-theme="dark">
-                <div className={customCol()}> 
-                  <div className={customSelect(platform)}>
-                    <div className="h6 text-light">Platform</div>
-                    <select id="Platform" className="form-select form-select-sm" onChange={changePlatform} aria-label="Small select example">
+  <div className='bg-black pb-3'>
+    <Container  className="bg-black">
+      <Header/>
+        <Container className="mt-5 align-items-center">
+          <div className='row gy-5'>
+            <div className='col-lg-9 col-md-12 col-sm-12 order-lg-2'>
+              <div className="row px-5 mt-3 row-gap-3" data-bs-theme="dark">
+                  <div className={customCol()}> 
+                    <div className={customSelect(platform)}>
+                      <div className="h6 text-light">Platform</div>
+                      <select id="Platform" className="form-select form-select-sm" onChange={changePlatform} aria-label="Small select example">
+                        <option hidden>Choose any one...</option>
+                        {platforms.map(ctr=>(
+                          <option key={ctr.idcomp} value={ctr.title}>{ctr.title}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                  <div className={customCol()}> 
+                    <div className={customSelect(gpuType)}>
+                        <div className="h6 text-light">In-Built or Dedicated</div>
+                        <select disabled = {platform === ''} id="GpuType" className="form-select form-select-sm" onChange={changeGpuType} aria-label="Small select example">
+                          <option hidden>Choose any one...</option>
+                          {gpuTypes.map(ctr=>(
+                            <option key={ctr.idcomp} value={ctr.title}>{ctr.title}</option>
+                          ))}
+                        </select>
+                    </div>
+                  </div>
+                  <div className={customCol()}> 
+                    <div className={customSelect(generation)}>
+                      <div className="h6 text-light">Processor Series</div>
+                      <select disabled = {gpuType === ''} id="ProcessorSeries" className="form-select form-select-sm" onChange={changeGeneration} aria-label="Small select example">
+                          <option hidden>Choose any one...</option>
+                          {generations.map((title,index)=>(
+                            <option key={index} value={title.series}>{title.series}</option>
+                          ))}
+                      </select>
+                    </div> 
+                  </div>
+                  <div className={customCol()}> 
+                    <div className={customSelect(processor)}>
+                      <div className="h6 text-light">Processor</div>
+                      <select disabled = {generation === ''} id="Processor" className="form-select form-select-sm" onChange={changeProcessor} aria-label="Small select example">
+                        <option hidden>Choose any one...</option>
+                        {processors.map(ctr=>(
+                          <option key={ctr.idcomp} value={ctr.title}>{ctr.title}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+              </div>
+              <div className="row px-5 mt-3 row-gap-3" data-bs-theme="dark">
+                <div className={customCol()}>
+                  <div className={customSelect(ramType)}>
+                    <div className="h6 text-light">RAM Type</div>
+                    <select disabled = {processor === ''} id="RamType" className="form-select form-select-sm" onChange={changeRamType} aria-label="Small select example">
                       <option hidden>Choose any one...</option>
-                      {platforms.map(ctr=>(
-                        <option key={ctr.idcomp} value={ctr.title}>{ctr.title}</option>
+                      {ramTypes.map((title,index)=>(
+                        <option key={index} value={title.chipsetRamType}>{title.chipsetRamType}</option>
                       ))}
                     </select>
                   </div>
                 </div>
-                <div className={customCol()}> 
-                  <div className={customSelect(gpuType)}>
-                      <div className="h6 text-light">In-Built or Dedicated</div>
-                      <select disabled = {platform === ''} id="GpuType" className="form-select form-select-sm" onChange={changeGpuType} aria-label="Small select example">
+                <div className={customCol()}>
+                  <div className={customSelect(ramRGB)}>
+                    <div className="h6 text-light">RAM RGB</div>
+                    <select disabled = {ramType === ''} id="RamRgb" className="form-select form-select-sm" onChange={changeRamRGB} aria-label="Small select example">
+                      <option hidden>Choose any one...</option>
+                      {ramRGBs.map(ctr=>(
+                        <option key={ctr.id} value={ctr.value}>{ctr.option}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className={customCol()}>
+                  <div className={customSelect(ramSize)}>
+                    <div className="h6 text-light">RAM Size</div>
+                    <select disabled = {ramRGB === ''} id="RamSize" className="form-select form-select-sm" onChange={changeRamSize} aria-label="Small select example">
                         <option hidden>Choose any one...</option>
-                        {gpuTypes.map(ctr=>(
-                          <option key={ctr.idcomp} value={ctr.title}>{ctr.title}</option>
+                        {ramSizes.map(ctr=>(
+                          <option key={ctr.idram} value={ctr.ramSize}>{ctr.ramSize}</option>
+                        ))}
+                    </select>
+                  </div>
+                </div>
+                <div className={customCol()}>
+                  <div className={customSelect(chipset)}>
+                    <div className="h6 text-light">Chipset</div>
+                    <select disabled = {ramSize === ''} id="Chipset" className="form-select form-select-sm" onChange={changeChipset} aria-label="Small select example">
+                      <option hidden>Choose any one...</option>
+                      {chipsets.map(ctr=>(
+                        <option key={ctr.idchipset} value={ctr.chipsetName}>{ctr.chipsetName}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div className="row px-5 mt-3 row-gap-3" data-bs-theme="dark">
+                <div className={customCol()}>
+                  <div className={customSelect(gpuBrand)}>
+                    <div className="h6 text-light">GPU Brand</div>
+                    <select disabled = {chipset === ''} id="GpuBrand" className="form-select form-select-sm" onChange={changeGpuBrand} aria-label="Small select example">
+                      <option hidden>Choose any one...</option>
+                      {gpuBrands.map((title,index)=>(
+                        <option key={index} value={title.gpubrand}>{title.gpubrand}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className={customCol()}>
+                  <div className={customSelect(gpuModel)}>
+                    <div className="h6 text-light">GPU Model</div>
+                    <select disabled = {gpuBrand === ''} id="GpuModel" className="form-select form-select-sm" onChange={changeGpuModel} aria-label="Small select example">
+                      <option hidden>Choose any one...</option>
+                      {gpuModels.map(ctr=>(
+                        <option key={ctr.idgpu} value={ctr.gpumodel}>{ctr.gpumodel}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className={customCol()}>
+                  <div className={customSelect(cooler)}>
+                    <div className="h6 text-light">Cooler</div>
+                    <select disabled = {gpuModel === ''} id="Cooler" className="form-select form-select-sm" onChange={changeCooler} aria-label="Small select example">
+                        <option hidden>Choose any one...</option>
+                        {coolers.map(ctr=>(
+                          <option key={ctr.idcooler} value={ctr.coolername}>{ctr.coolername}</option>
                         ))}
                       </select>
                   </div>
                 </div>
-                <div className={customCol()}> 
-                  <div className={customSelect(generation)}>
-                    <div className="h6 text-light">Processor Series</div>
-                    <select disabled = {gpuType === ''} id="ProcessorSeries" className="form-select form-select-sm" onChange={changeGeneration} aria-label="Small select example">
+                <div className={customCol()}>
+                  <div className={customSelect(primaryStorage)}>
+                    <div className="h6 text-light">Primary Storage</div>
+                    <select disabled = {cooler === ''} id="Primarystorage" className="form-select form-select-sm" onChange={changePrimaryStorage} aria-label="Small select example">
                         <option hidden>Choose any one...</option>
-                        {generations.map((title,index)=>(
-                          <option key={index} value={title.series}>{title.series}</option>
+                        {primaryStorages.map(ctr=>(
+                          <option key={ctr.idstorage} value={ctr.storagename}>{ctr.storagename}</option>
                         ))}
-                    </select>
-                  </div> 
+                      </select>
+                  </div>
                 </div>
-                <div className={customCol()}> 
-                  <div className={customSelect(processor)}>
-                    <div className="h6 text-light">Processor</div>
-                    <select disabled = {generation === ''} id="Processor" className="form-select form-select-sm" onChange={changeProcessor} aria-label="Small select example">
+              </div>
+              <div className="row px-5 mt-3 row-gap-3" data-bs-theme="dark">
+                <div className={customCol()}>
+                  <div className={customSelect(secondaryStorage)}>
+                    <div className="h6 text-light">Secondary Storage</div>
+                    <select disabled = {primaryStorage === ''} id="SecondaryStorage" className="form-select form-select-sm" onChange={changeSecondaryStorage} aria-label="Small select example">
                       <option hidden>Choose any one...</option>
-                      {processors.map(ctr=>(
-                        <option key={ctr.idcomp} value={ctr.title}>{ctr.title}</option>
+                      {secondaryStorages.map(ctr=>(
+                        <option key={ctr.idstorage} value={ctr.storagename}>{ctr.storagename}</option>
                       ))}
                     </select>
                   </div>
                 </div>
-            </div>
-            <div className="row px-5 mt-3 row-gap-3" data-bs-theme="dark">
-              <div className={customCol()}>
-                <div className={customSelect(ramType)}>
-                  <div className="h6 text-light">RAM Type</div>
-                  <select disabled = {processor === ''} id="RamType" className="form-select form-select-sm" onChange={changeRamType} aria-label="Small select example">
-                    <option hidden>Choose any one...</option>
-                    {ramTypes.map((title,index)=>(
-                      <option key={index} value={title.chipsetRamType}>{title.chipsetRamType}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className={customCol()}>
-                <div className={customSelect(ramRGB)}>
-                  <div className="h6 text-light">RAM RGB</div>
-                  <select disabled = {ramType === ''} id="RamRgb" className="form-select form-select-sm" onChange={changeRamRGB} aria-label="Small select example">
-                    <option hidden>Choose any one...</option>
-                    {ramRGBs.map(ctr=>(
-                      <option key={ctr.id} value={ctr.value}>{ctr.option}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className={customCol()}>
-                <div className={customSelect(ramSize)}>
-                  <div className="h6 text-light">RAM Size</div>
-                  <select disabled = {ramRGB === ''} id="RamSize" className="form-select form-select-sm" onChange={changeRamSize} aria-label="Small select example">
+                <div className={customCol()}>
+                  <div className={customSelect(psu)}>
+                    <div className="h6 text-light">Power Supply Unit</div>
+                    <select disabled = {secondaryStorage === ''} id="Psu" className="form-select form-select-sm" onChange={changePsu} aria-label="Small select example">
                       <option hidden>Choose any one...</option>
-                      {ramSizes.map(ctr=>(
-                        <option key={ctr.idram} value={ctr.ramSize}>{ctr.ramSize}</option>
-                      ))}
-                  </select>
-                </div>
-              </div>
-              <div className={customCol()}>
-                <div className={customSelect(chipset)}>
-                  <div className="h6 text-light">Chipset</div>
-                  <select disabled = {ramSize === ''} id="Chipset" className="form-select form-select-sm" onChange={changeChipset} aria-label="Small select example">
-                    <option hidden>Choose any one...</option>
-                    {chipsets.map(ctr=>(
-                      <option key={ctr.idchipset} value={ctr.chipsetName}>{ctr.chipsetName}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div className="row px-5 mt-3 row-gap-3" data-bs-theme="dark">
-              <div className={customCol()}>
-                <div className={customSelect(gpuBrand)}>
-                  <div className="h6 text-light">GPU Brand</div>
-                  <select disabled = {chipset === ''} id="GpuBrand" className="form-select form-select-sm" onChange={changeGpuBrand} aria-label="Small select example">
-                    <option hidden>Choose any one...</option>
-                    {gpuBrands.map((title,index)=>(
-                      <option key={index} value={title.gpubrand}>{title.gpubrand}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className={customCol()}>
-                <div className={customSelect(gpuModel)}>
-                  <div className="h6 text-light">GPU Model</div>
-                  <select disabled = {gpuBrand === ''} id="GpuModel" className="form-select form-select-sm" onChange={changeGpuModel} aria-label="Small select example">
-                    <option hidden>Choose any one...</option>
-                    {gpuModels.map(ctr=>(
-                      <option key={ctr.idgpu} value={ctr.gpumodel}>{ctr.gpumodel}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className={customCol()}>
-                <div className={customSelect(cooler)}>
-                  <div className="h6 text-light">Cooler</div>
-                  <select disabled = {gpuModel === ''} id="Cooler" className="form-select form-select-sm" onChange={changeCooler} aria-label="Small select example">
-                      <option hidden>Choose any one...</option>
-                      {coolers.map(ctr=>(
-                        <option key={ctr.idcooler} value={ctr.coolername}>{ctr.coolername}</option>
+                      {psus.map(ctr=>(
+                        <option key={ctr.idpsu} value={ctr.psuname}>{ctr.psuname}</option>
                       ))}
                     </select>
+                  </div>
                 </div>
-              </div>
-              <div className={customCol()}>
-                <div className={customSelect(primaryStorage)}>
-                  <div className="h6 text-light">Primary Storage</div>
-                  <select disabled = {cooler === ''} id="Primarystorage" className="form-select form-select-sm" onChange={changePrimaryStorage} aria-label="Small select example">
+                <div className={customCol()}>
+                  <div className={customSelect(cabinetBrand)}>
+                    <div className="h6 text-light">Cabinet Brand</div>
+                    <select disabled = {psu === ''} id="CabinetBrand" className="form-select form-select-sm" onChange={changeCabinetBrand} aria-label="Small select example">
                       <option hidden>Choose any one...</option>
-                      {primaryStorages.map(ctr=>(
-                        <option key={ctr.idstorage} value={ctr.storagename}>{ctr.storagename}</option>
+                      {cabinetBrands.map((ctr,index)=>(
+                        <option key={index} value={ctr.cabinetbrand}>{ctr.cabinetbrand}</option>
                       ))}
                     </select>
+                  </div>
+                </div>
+                <div className={customCol()}>
+                  <div className={customSelect(cabinetModel)}>
+                    <div className="h6 text-light">Cabinet Model</div>
+                    <select disabled = {cabinetBrand === ''} id="CabinetModel" className="form-select form-select-sm" onChange={changeCabinetModel} aria-label="Small select example">
+                      <option hidden>Choose any one...</option>
+                      {cabinetModels.map((ctr,index)=>(
+                        <option key={index} value={ctr.cabinetmodel}>{ctr.cabinetmodel}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="row px-5 mt-3 row-gap-3" data-bs-theme="dark">
-              <div className={customCol()}>
-                <div className={customSelect(secondaryStorage)}>
-                  <div className="h6 text-light">Secondary Storage</div>
-                  <select disabled = {primaryStorage === ''} id="SecondaryStorage" className="form-select form-select-sm" onChange={changeSecondaryStorage} aria-label="Small select example">
-                    <option hidden>Choose any one...</option>
-                    {secondaryStorages.map(ctr=>(
-                      <option key={ctr.idstorage} value={ctr.storagename}>{ctr.storagename}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className={customCol()}>
-                <div className={customSelect(psu)}>
-                  <div className="h6 text-light">Power Supply Unit</div>
-                  <select disabled = {secondaryStorage === ''} id="Psu" className="form-select form-select-sm" onChange={changePsu} aria-label="Small select example">
-                    <option hidden>Choose any one...</option>
-                    {psus.map(ctr=>(
-                      <option key={ctr.idpsu} value={ctr.psuname}>{ctr.psuname}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className={customCol()}>
-                <div className={customSelect(cabinetBrand)}>
-                  <div className="h6 text-light">Cabinet Brand</div>
-                  <select disabled = {psu === ''} id="CabinetBrand" className="form-select form-select-sm" onChange={changeCabinetBrand} aria-label="Small select example">
-                    <option hidden>Choose any one...</option>
-                    {cabinetBrands.map((ctr,index)=>(
-                      <option key={index} value={ctr.cabinetbrand}>{ctr.cabinetbrand}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className={customCol()}>
-                <div className={customSelect(cabinetModel)}>
-                  <div className="h6 text-light">Cabinet Model</div>
-                  <select disabled = {cabinetBrand === ''} id="CabinetModel" className="form-select form-select-sm" onChange={changeCabinetModel} aria-label="Small select example">
-                    <option hidden>Choose any one...</option>
-                    {cabinetModels.map((ctr,index)=>(
-                      <option key={index} value={ctr.cabinetmodel}>{ctr.cabinetmodel}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+            <div className='col-lg-3 col-md-12 col-sm-12 order-sm-2 order-md-1 border border-secondary rounded'>
+              <div className='h3 text-danger text-center mt-3 mb-3'>Components</div>
+              <div className='h6 offset-2 text-light text-start'>{processor}</div>
+              <div className='h6 offset-2 text-light text-start'>{ramSize}</div>
+              <div className='h6 offset-2 text-light text-start'>{chipset}</div>
+              <div className='h6 offset-2 text-light text-start'>{(gpuModel==='Stock'?'':gpuModel)}</div>
+              <div className='h6 offset-2 text-light text-start'>{(cooler==='Stock'?'':cooler)}</div>
+              <div className='h6 offset-2 text-light text-start'>{primaryStorage}</div>
+              <div className='h6 offset-2 text-light text-start'>{(secondaryStorage==='NA'?'':secondaryStorage)}</div>
+              <div className='h6 offset-2 text-light text-start'>{psu}</div>
+              <div className='h6 offset-2 text-light text-start mb-3'>{cabinetModel}</div>
             </div>
           </div>
-          <div className='col-lg-3 col-md-12 col-sm-12 order-sm-2 order-md-1 border border-secondary rounded'>
-            <div className='h3 text-danger text-center mt-3 mb-3'>Components</div>
-            <div className='h6 offset-2 text-light text-start'>{processor}</div>
-            <div className='h6 offset-2 text-light text-start'>{ramSize}</div>
-            <div className='h6 offset-2 text-light text-start'>{chipset}</div>
-            <div className='h6 offset-2 text-light text-start'>{(gpuModel==='Stock'?'':gpuModel)}</div>
-            <div className='h6 offset-2 text-light text-start'>{(cooler==='Stock'?'':cooler)}</div>
-            <div className='h6 offset-2 text-light text-start'>{primaryStorage}</div>
-            <div className='h6 offset-2 text-light text-start'>{(secondaryStorage==='NA'?'':secondaryStorage)}</div>
-            <div className='h6 offset-2 text-light text-start'>{psu}</div>
-            <div className='h6 offset-2 text-light text-start mb-3'>{cabinetModel}</div>
+        </Container>
+        <Container className='mt-5'>
+          <div className="row p-5" data-bs-theme="dark">
+          <div className="col-sm-12 col-md-12 col-lg-2 text-center">
           </div>
-        </div>
-      </div>
-      <div className='container'>
-        <div className="row p-5" data-bs-theme="dark">
-        <div className="col-sm-12 col-md-12 col-lg-2 text-center">
-        </div>
-        <div className="col-sm-12 col-md-12 col-lg-4 px-4 mb-3 offset-1">
-          <div className="h4 text-light-emphasis">Price: {pcPrice.price > 0?"₹ "+ new Intl.NumberFormat('en-IN').format(pcPrice.price)+"/-":""}</div>
-        </div>
-        <div className="col-sm-12 col-md-12 col-lg-4 px-4 offset-1">
-          <div className="btn btn-outline-danger">Add to Cart</div>
-        </div>
-        </div>
-      </div>
-      <div className='bg-black' style={{height:"43.2vh"}}></div>
+          <div className="col-sm-12 col-md-12 col-lg-4 px-4 mb-3 offset-1">
+            <div className="h4 text-light-emphasis">Price: {pcPrice.price > 0?"₹ "+ new Intl.NumberFormat('en-IN').format(pcPrice.price)+"/-":""}</div>
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-4 px-4 offset-1">
+            <div className="btn btn-outline-danger">Add to Cart</div>
+          </div>
+          </div>
+        </Container>
+      <Footer/>
+    </Container>
     </div>
   )
 }

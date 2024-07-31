@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container'
 
 const Footer = () => {
   return (
-    <Row className='border-top border-bottom py-5 mt-5'>
+    <Row className='border-top border-bottom py-5 mt-5 mb-5'>
         <Col className='col-lg-3 col-12 bg-black'>
             <a class="" href="/">
                 <img  src="FG_Logo.ico" className="d-block w-10" width={216} height={216} alt="1"/>
