@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react' 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/esm/Button'
 import Container from 'react-bootstrap/Container'
 
 
@@ -20,23 +19,23 @@ const Footer = () => {
             <Container className='h4 text-light'>
                 QUICK LINKS
             </Container>
-            <Container className='px-5 mt-3'><a className="link-light link-underline-opacity-0" href='#'>Build Your Own PC</a></Container>
-            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#'>Gaming</a></Container>
-            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#'>AI & ML</a></Container>
-            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#'>Architecture</a></Container>
-            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#'>Graphic Design</a></Container>
-            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#'>Trading</a></Container>
+            <Container className='px-5 mt-3'><a className="link-light link-underline-opacity-0" href='#home'>Build Your Own PC</a></Container>
+            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#home'>Gaming</a></Container>
+            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#home'>AI & ML</a></Container>
+            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#home'>Architecture</a></Container>
+            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#home'>Graphic Design</a></Container>
+            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#home'>Trading</a></Container>
         </Col>
         <Col className='col-lg-3 col-12 mt-4 bg-black'>
             <Container className='h4 text-light'>
                 USEFUL LINKS
             </Container>
-            <Container className='px-5 mt-3'><a className="link-light link-underline-opacity-0" href='#'>About Us</a></Container>
-            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#'>Consultation</a></Container>
-            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#'>Cancellation & Refund</a></Container>
-            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#'>Returns</a></Container>
-            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#'>Shipping</a></Container>
-            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#'>Terms & Conditions</a></Container>
+            <Container className='px-5 mt-3'><a className="link-light link-underline-opacity-0" href='#home'>About Us</a></Container>
+            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#home'>Consultation</a></Container>
+            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#home'>Cancellation & Refund</a></Container>
+            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#home'>Returns</a></Container>
+            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#home'>Shipping</a></Container>
+            <Container className='px-5 mt-2'><a className="link-light link-underline-opacity-0" href='#home'>Terms & Conditions</a></Container>
             </Col>
         <Col className='col-lg-3 col-12 mt-4 bg-black'>
             <Container className='h4 text-light'>

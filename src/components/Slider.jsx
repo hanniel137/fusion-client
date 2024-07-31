@@ -1,38 +1,24 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import '../Style.css'
 
 const Slider = () => {
   return (
     <>
-        <Carousel className='mt-1 border-top'>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src="slide1.jpg"
-                    alt="One"
-                />
+        <Carousel className='mt-1 mb-5'>
+            <Carousel.Item className="carousel-img bg-img-1" interval={2000}>
                 <Carousel.Caption>
                 <h3>First slide label</h3>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src="slide1.jpg"
-                    alt="Two"
-                />
+            <Carousel.Item className="carousel-img bg-img-2" interval={2000}> 
                 <Carousel.Caption>
                 <h3>Second slide label</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src="slide1.jpg"
-                    alt="Three"
-                />
+            <Carousel.Item className="carousel-img bg-img-3" interval={2000}>
                 <Carousel.Caption>
                 <h3>Third slide label</h3>
                 <p>

@@ -5,3 +5,22 @@ body {
     font-style: normal;
 }
 
+.bg-img-1 {
+    background-image: url(../public/slide1.jpg) ;
+}
+
+.bg-img-2 {
+    background-image: url(../public/slide2.jpg) ;
+}
+
+.bg-img-3 {
+    background-image: url(../public/slide3.jpg) ;
+}
+
+.carousel-img{
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}

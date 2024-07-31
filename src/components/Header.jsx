@@ -20,9 +20,9 @@ const Header = () => {
                 </Nav>
             </Container>
         </Navbar>
-        <Navbar expand="lg" className="bg-black sticky-top" data-bs-theme="dark">
+        <Navbar expand="lg" className="bg-black sticky-top border-light border-bottom" data-bs-theme="dark">
             <Container>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img  src="FG_Logo.ico" className="d-block w-10" width={100} height={100} alt="1"/>
                 </a>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
