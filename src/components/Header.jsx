@@ -8,15 +8,15 @@ import '../Style.css'
 const Header = () => {
   return (
     <>
-        <Navbar className='bg-danger' data-bs-theme="dark">
+        <Navbar className='bg-black border-bottom border-secondary' data-bs-theme="dark">
             <Container style={{height: "15px"}}>
                 <Nav className='justify-content-center'>
-                    <Navbar.Brand className="m-auto" href="tel:+91-6369933507"><small>+91-63699 33507</small></Navbar.Brand>
+                    <Navbar.Brand className="m-auto text-danger" href="tel:+91-6369933507"><small>+91-63699 33507</small></Navbar.Brand>
                 </Nav>
                 <Nav className="ms-auto justify-content-center">
-                    <Navbar.Brand href="#home"><small>Login</small></Navbar.Brand>
-                    <Navbar.Brand href="#home"><small>|</small></Navbar.Brand>
-                    <Navbar.Brand href="#home"><small>Cart</small></Navbar.Brand>
+                    <Navbar.Brand className='text-light' href="#home"><small>Login</small></Navbar.Brand>
+                    <Navbar.Brand className='text-light' href="#home"><small>|</small></Navbar.Brand>
+                    <Navbar.Brand className='text-light' href="#home"><small>Cart</small></Navbar.Brand>
                 </Nav>
             </Container>
         </Navbar>
