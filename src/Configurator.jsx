@@ -4,6 +4,7 @@ import axios from 'axios'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Container from 'react-bootstrap/Container'
+import Whatsapp from './components/Whatsapp'
 
 
 
@@ -615,6 +616,7 @@ const customCol = () => {
 return (
   <div className='bg-black pb-3'>
     <Container  className="bg-black">
+      <Whatsapp/>
       <Header/>
         <Container className="mt-5 align-items-center">
           <div className='row gy-5'>
@@ -805,7 +807,8 @@ return (
               </div>
             </div>
             <div className='col-lg-3 col-md-12 col-sm-12 order-sm-2 order-md-1 border border-secondary rounded'>
-              <div className='h3 text-danger text-center mt-3 mb-3'>Components</div>
+              <div className='h3 text-danger text-center mt-3'>Components</div>
+              <div className='h6 text-secondary text-center mb-3'>{(cabinetModel?"":"Select all components to get price")}</div>
               <div className='h6 offset-2 text-light text-start'>{processor}</div>
               <div className='h6 offset-2 text-light text-start'>{ramSize}</div>
               <div className='h6 offset-2 text-light text-start'>{chipset}</div>

@@ -8,22 +8,22 @@ import '../Style.css'
 const Header = () => {
   return (
     <>
-        <Navbar className="sticky-top" style={{height: "28px"}} data-bs-theme="dark">
-            <Container>
-                <Nav>
-                    <Navbar.Brand className="mt-3 text-danger"href="#home"><p><small>+91-9003148988</small></p></Navbar.Brand>
+        <Navbar className='bg-danger' data-bs-theme="dark">
+            <Container style={{height: "15px"}}>
+                <Nav className='justify-content-center'>
+                    <Navbar.Brand className="m-auto" href="tel:+91-6369933507"><small>+91-63699 33507</small></Navbar.Brand>
                 </Nav>
-                <Nav className="ms-auto">
-                    <Navbar.Brand className="mt-3" href="#home"><p><small>Login</small></p></Navbar.Brand>
-                    <Navbar.Brand className="mt-3" href="#home"><p><small>|</small></p></Navbar.Brand>
-                    <Navbar.Brand className="mt-3" href="#home"><p><small>Cart</small></p></Navbar.Brand>
+                <Nav className="ms-auto justify-content-center">
+                    <Navbar.Brand href="#home"><small>Login</small></Navbar.Brand>
+                    <Navbar.Brand href="#home"><small>|</small></Navbar.Brand>
+                    <Navbar.Brand href="#home"><small>Cart</small></Navbar.Brand>
                 </Nav>
             </Container>
         </Navbar>
-        <Navbar expand="lg" className="bg-black sticky-top border-light border-bottom" data-bs-theme="dark">
+        <Navbar expand="lg" className="bg-black sticky-top border-light border-bottom bg-opacity-75" data-bs-theme="dark">
             <Container>
                 <a class="navbar-brand" href="/">
-                    <img  src="FG_Logo.ico" className="d-block w-10" width={100} height={100} alt="1"/>
+                    <img  src="FG_Logo.ico" className="d-block w-10" width={95} height={90} alt="1"/>
                 </a>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
@@ -32,7 +32,6 @@ const Header = () => {
                         <Navbar.Brand className="h2 p-1" href="#home">Pre-Builts</Navbar.Brand>
                         <Navbar.Brand className="h2 p-1" href="#home">About Us</Navbar.Brand>
                         <Navbar.Brand className="h2 p-1" href="#home">Support</Navbar.Brand>
-
                     </Nav>
                 </Navbar.Collapse>
             </Container>

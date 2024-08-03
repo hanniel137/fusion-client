@@ -9,7 +9,7 @@ const Footer = () => {
     <Row className='border-top border-bottom py-5 mt-5 mb-5'>
         <Col className='col-lg-3 col-12 bg-black'>
             <a class="" href="/">
-                <img  src="FG_Logo.ico" className="d-block w-10" width={216} height={216} alt="1"/>
+                <img  src="FG_Logo.jpg" className="d-block w-10" width={229} height={216} alt="1"/>
             </a>
             <Container className='h5 mt-2 text-secondary'>
                 Fusion Gaming excels in custom-built PCs and boasts over 1500 loyal customers all across India.
@@ -45,7 +45,10 @@ const Footer = () => {
             <a className="link-danger link-underline-opacity-0" href="https://maps.app.goo.gl/KZWBYTEJvCdPxTou7">Marina Mall, Floor 2, Below INOX, Egattur, Chennai, Tamil Nadu 603103, India</a>
             </Container>
             <Container className='mt-3'>
-            <a className="link-danger link-underline-opacity-0" href="https://maps.app.goo.gl/KZWBYTEJvCdPxTou7">+91-9003148988</a>
+            <a className="link-danger link-underline-opacity-0" href="mailto:future.retail20@gmail.com">future.retail20@gmail.com</a>
+            </Container>
+            <Container className='mt-3'>
+            <a className="link-danger link-underline-opacity-0" href="tel:+91-6369933507">+91-63699 33507</a>
             </Container>
         </Col>
     </Row>
