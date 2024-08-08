@@ -13,6 +13,8 @@ import Footer from './components/Footer'
 
 const Register = () => {
 
+    const url = "https://fusion-backend.onrender.com"
+
     const [status, setStatus] = useState(null)
 
     const signUp = () => async(req,res) => {
@@ -23,7 +25,7 @@ const Register = () => {
             const email = document.getElementById('email').value
             const password = document.getElementById('password').value
             const retypePassword = document.getElementById('retypePassword').value
-            const res = await axios.post("http://192.168.1.117:8800/register", {firstName, lastName, number, email, password, retypePassword}, {withCredentials: true})
+            const res = await axios.post(url+"/register", {firstName, lastName, number, email, password, retypePassword}, {withCredentials: true})
             console.log(res.data)
             setStatus(res.data)
         } catch (err) {

@@ -14,12 +14,15 @@ import Footer from './components/Footer'
 import { useAuth } from './contexts/AuthContext'
 
 const Login = () => {
+
+    const url = "https://fusion-backend.onrender.com"
+
     const {authUser, setAuthUser, isLoggedIn, setIsLoggedIn} = useAuth()
     const signin = () => async(req,res) => {
         try {
             const number = document.getElementById('number').value
             const password = document.getElementById('password').value
-            const res = await axios.post("http://192.168.1.117:8800/login", {number, password}, {withCredentials: true})
+            const res = await axios.post(url+"/login", {number, password}, {withCredentials: true})
             setAuthUser(res.data)
             setIsLoggedIn(true)
             console.log(res.data)
