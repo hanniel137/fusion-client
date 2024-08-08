@@ -39,12 +39,12 @@ const Register = () => {
             <Header />
             <Container className='border mt-5 justify-content-center' style={{height:"100%"}}>
                 <Row className='justify-content-center mt-5'>
-                    <Col className='h1 text-center text-light col-6'>
+                    <Col className='h1 text-center text-light col-12'>
                         SIGN UP
                     </Col>
                 </Row>
                 <Row className='justify-content-center'>
-                    <Col className='h5 text-center text-secondary col-6'>
+                    <Col className='h5 text-center text-secondary col-12'>
                         <small>Welcome to Fusion Gaming!!</small>
                     </Col>
                 </Row>
@@ -95,7 +95,7 @@ const Register = () => {
                     </Col>
                 </Row>
                 <Row className='justify-content-center'>
-                    <Col className='h5 mt-1 text-light col-8 col-lg-4'>
+                    <Col className='h5 mt-1 text-light col-12 col-lg-4'>
                         <Container className='h5 text-center text-secondary'><small>
                             Your password must be 8-20 characters long, contain letters and numbers,
                             and must not contain spaces, special characters, or emoji.</small>
@@ -104,11 +104,11 @@ const Register = () => {
                 </Row>
                 <Row className='justify-content-center'>
                     <Col className='h5 mt-5 text-center text-light col-8 col-lg-4'>
-                        <Button variant="danger" onClick={signUp()} size="lg"><span className="h5">Sign Up</span></Button>
+                        <Button variant="danger" onClick={signUp()} size="lg"><span className="h5">SIGN UP</span></Button>
                     </Col>
                 </Row>
                 <Row className='justify-content-center'>
-                    <Col className='h5 text-center text-dark col-2'>
+                    <Col className='h5 text-center text-dark col-12'>
                         <small>{(status===null)?"Click to create user":status}</small>
                     </Col>
                 </Row>

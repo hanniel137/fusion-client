@@ -39,25 +39,25 @@ const Login = () => {
             <Header />
             <Container className='border mt-5 p-5 justify-content-center' style={{height:"100%"}}>
                 <Row className='justify-content-center mt-5'>
-                    <Col className='h1 text-center text-light col-6'>
+                    <Col className='h1 text-center text-light col-12'>
                         SIGN IN
                     </Col>
                 </Row>
                 <Row className='justify-content-center'>
-                    <Col className='h5 text-center text-light col-6'>
+                    <Col className='h5 text-center text-light col-10'>
                         <small>NEW TO FUSION GAMING?</small> <a className="link-danger link-underline-opacity-0" href='/register'>SIGN UP</a>
                     </Col>
                 </Row>
                 <Row className='justify-content-center'>
-                    <Col className='h5 mt-5 text-light col-6'>
+                    <Col className='h5 mt-5 text-light col-lg-4 col-10'>
                     <Form.Group className="mb-3" id="numberGroup">
-                        <Form.Label htmlFor='number'>Phone Number</Form.Label>
+                        <Form.Label htmlFor='number'>Email or Phone Number</Form.Label>
                         <Form.Control type="text" id='number' placeholder="xxxxxxxxxx" />
                     </Form.Group>
                     </Col>
                 </Row>
                 <Row className='justify-content-center'>
-                    <Col className='h5 mt-1 text-light col-6'>
+                    <Col className='h5 mt-1 text-light col-lg-4 col-10'>
                     <Form.Group className="mb-3" id="passwordGroup">
                         <Form.Label htmlFor='password'>Password</Form.Label>
                         <Form.Control type="password" id="password" placeholder='xxxxxxxx' aria-describedby="passwordHelpBlock"/>
@@ -65,17 +65,17 @@ const Login = () => {
                     </Col>
                 </Row>
                 <Row className='justify-content-center'>
-                    <Col className='h5 mt-5 text-center text-light col-6'>
-                        <Button variant="danger" onClick={signin()} size="lg"><span className="h5">Log In</span></Button>
+                    <Col className='h5 mt-5 text-center text-light col-12'>
+                        <Button variant="danger" onClick={signin()} size="lg"><span className="h5">LOGIN</span></Button>
                     </Col>
                 </Row>
                 <Row className='justify-content-center'>
-                    <Col className='h5 text-center text-dark col-2'>
-                        <small>{(isLoggedIn)?"Logged In":"Please Log In"}</small>
+                    <Col className='h5 text-center text-dark col-12'>
+                        <small>{(isLoggedIn)?"Logged In":"Click to LogIn"}</small>
                     </Col>
                 </Row>
                 <Row className='justify-content-end'>
-                    <Col className='h5 mt-1 text-center text-light col-7'>
+                    <Col className='h5 mt-1 text-center text-light col-12'>
                         <a className="link-danger link-underline-opacity-0" href='/resetPassword'>Forgot Password</a>
                     </Col>
                 </Row>
