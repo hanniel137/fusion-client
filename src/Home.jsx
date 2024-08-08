@@ -1,19 +1,17 @@
 import React from 'react'
 
 import Header from './components/Header'
-import Slider from './components/Slider'
-import Row1 from './components/Row1'
-import Row2 from './components/Row2'
-import Row3 from './components/Row3'
-import Row4 from './components/Row4'
-import Row5 from './components/Row5'
+import Slider from './components/home/Slider'
+import Row1 from './components/home/Row1'
+import Row2 from './components/home/Row2'
+import Row3 from './components/home/Row3'
+import Row4 from './components/home/Row4'
+import Row5 from './components/home/Row5'
 import Footer from './components/Footer'
 import Whatsapp from './components/Whatsapp'
+import Container from 'react-bootstrap/Container'
 
-
-import Container from 'react-bootstrap/Container';
-//import Row from 'react-bootstrap/Row';
-//import Col from 'react-bootstrap/Col';
+import '../src/Style.css'
 
 
 const Home = () => {

@@ -12,7 +12,7 @@ const Footer = () => {
                 <img  src="FG_Logo.jpg" className="d-block w-10" width={229} height={216} alt="1"/>
             </a>
             <Container className='h5 mt-2 text-secondary'>
-                Fusion Gaming excels in custom-built PCs and boasts over 1500 loyal customers all across India.
+                Fusion Gaming excels in custom-built PCs and boasts over 1500+ loyal customers all across India.
             </Container>
         </Col>
         <Col className='col-lg-3 col-12 mt-4 bg-black'>

@@ -4,8 +4,6 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/esm/Button'
 import Container from 'react-bootstrap/Container'
 
-import '../Style.css'
-
 const Row2 = () => {
   return (
     <>
