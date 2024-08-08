@@ -73,7 +73,7 @@ const Login = () => {
                 </Row>
                 <Row className='justify-content-center'>
                     <Col className='h5 text-center text-dark col-12'>
-                        <small>{(isLoggedIn)?"Logged In":msg}</small>
+                        <small>{(isLoggedIn)?"Logged In":(msg?"Click to Login":msg)}</small>
                     </Col>
                 </Row>
                 <Row className='justify-content-end'>
