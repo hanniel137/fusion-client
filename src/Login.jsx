@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
-import { redirect } from 'react-router-dom'
+import { redirect, useSearchParams } from 'react-router-dom'
 
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/Row'
@@ -18,6 +18,9 @@ const Login = () => {
     const url = "https://fusion-backend.onrender.com"
 
     const {authUser, setAuthUser, isLoggedIn, setIsLoggedIn} = useAuth()
+
+    const [msg, setMsg] = useState('')
+
     const signin = () => async(req,res) => {
         try {
             const number = document.getElementById('number').value
@@ -25,10 +28,9 @@ const Login = () => {
             const res = await axios.post(url+"/login", {number, password}, {withCredentials: true})
             setAuthUser(res.data)
             setIsLoggedIn(true)
-            console.log(res.data)
-            return res.data
         } catch (err) {
             console.log(err.request.response)
+            setMsg(err.request.response)
             setAuthUser(null)
             setIsLoggedIn(false)
         }
@@ -71,7 +73,7 @@ const Login = () => {
                 </Row>
                 <Row className='justify-content-center'>
                     <Col className='h5 text-center text-dark col-12'>
-                        <small>{(isLoggedIn)?"Logged In":"Click to LogIn"}</small>
+                        <small>{(isLoggedIn)?"Logged In":msg}</small>
                     </Col>
                 </Row>
                 <Row className='justify-content-end'>
